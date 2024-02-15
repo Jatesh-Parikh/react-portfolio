@@ -1,0 +1,135 @@
+section#experience {
+  min-height: 100vh;
+  h2 {
+    position: relative;
+    top: -25px;
+  }
+
+  .timeline {
+    padding: 5px 0 10px 0;
+
+    .item {
+      display: flex;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      top: -50px;
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          transition-delay: #{$i * 0.3s};
+        }
+      }
+      .date {
+        padding-right: 15px;
+        display: flex;
+        position: relative;
+        span.year {
+          background-color: #5c5d61;
+          padding: 0px 10px;
+          height: 30px;
+          display: inline-block;
+          line-height: 30px;
+        }
+        span.arrow {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 15px 0 15px 10px;
+          border-color: transparent transparent transparent #5c5d61;
+        }
+      }
+
+      .separator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .dot {
+          margin-top: 0.5rem;
+          width: 20px;
+          height: 20px;
+          background-color: $primary-color;
+          border-radius: 50%;
+          background-image: radial-gradient(
+            $primary-color,
+            $primary-color 25%,
+            #3d3e42
+          );
+          box-shadow: 0px 0px 20px rgba($primary-color, 0.6);
+        }
+        .line {
+          min-height: 10px;
+          width: 2px;
+          background-color: #fff;
+          flex-grow: 1;
+          margin-left: 2px;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          transition: all 0.5s ease-in-out;
+          max-height: 0;
+        }
+      }
+
+      .texts {
+        padding-left: 40px;
+        padding-bottom: 40px;
+        h3 {
+          font-size: 1.7rem;
+          font-weight: normal;
+        }
+        h4 {
+          margin-top: 6px;
+          margin-bottom: 6px;
+          font-weight: normal;
+          font-size: 1.4rem;
+        }
+        li {
+          color: rgba(255, 255, 255, 0.7);
+          line-height: 1.3rem;
+          margin-top: 10px;
+          list-style-type: none;
+        }
+      }
+    }
+  }
+}
+
+section#experience.visible div.timeline div.item {
+  opacity: 1;
+  top: 0;
+}
+section#experience div.timeline div.item {
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      .line {
+        transition-delay: #{$i * 0.3s};
+      }
+    }
+  }
+}
+section#experience.visible div.timeline div.item .line {
+  max-height: 200px;
+}
+
+@media (max-width: 576px) {
+  section#experience {
+    h2 {
+      margin-left: 10px;
+    }
+    .item {
+      margin: 0 30px;
+
+      .date {
+        margin-left: 10px;
+      }
+      .separator {
+        visibility: hidden;
+      }
+
+      .texts {
+        margin-left: -60px;
+      }
+    }
+  }
+}

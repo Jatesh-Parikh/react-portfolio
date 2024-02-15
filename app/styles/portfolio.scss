@@ -1,0 +1,88 @@
+section#portfolio {
+  background-color: #31333b;
+  padding: 60px 0;
+}
+
+section#portfolio h2 {
+  text-align: center;
+}
+
+.portfolio-container {
+  padding: 20px 0 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  a {
+    display: block;
+    flex-grow: 1;
+    align-self: center;
+    opacity: 0;
+    scale: 0.8;
+    position: relative;
+    left: -50px;
+    transition: all 0.4s ease-in-out;
+
+    img {
+      max-width: 400px;
+      border-radius: 10px;
+      padding: 30px;
+    }
+  }
+
+  a:hover {
+    opacity: 0;
+    transition: all 400ms linear;
+  }
+
+  a:hover::before {
+    content: "View src code";
+    color: white;
+    font-family: "Roboto", sans-serif;
+    background-color: rgba(#3d3e42, 0.8);
+    padding: 5px 15px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    position: absolute;
+    top: 100px;
+    left: 140px;
+    opacity: 1;
+    transition: all 500ms linear;
+  }
+  a:hover::after {
+    content: "";
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.05);
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 500ms linear;
+  }
+
+  @for $i from 1 through 8 {
+    a:nth-child(#{$i}) {
+      transition-delay: #{$i * 100ms};
+    }
+  }
+}
+
+section#portfolio.visible a {
+  opacity: 1;
+  scale: 1;
+  left: 0;
+}
+
+@media (max-width: 576px) {
+  section#portfolio {
+    padding: 20px 0;
+  }
+  .portfolio-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

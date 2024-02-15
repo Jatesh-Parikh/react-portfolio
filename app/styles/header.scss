@@ -1,0 +1,50 @@
+header {
+  display: flex;
+  max-width: 1140px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+header nav {
+  flex-grow: 1;
+  margin-left: 1rem;
+  text-align: center;
+}
+
+header nav a {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 10px 1rem;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: white;
+  transition-duration: 100ms;
+}
+
+header div.social a {
+  display: inline-block;
+}
+
+header div.social a svg {
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  margin: 0 10px;
+}
+
+header div.social a svg:hover {
+  fill: white;
+  transition-duration: 200ms;
+}

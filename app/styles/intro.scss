@@ -1,0 +1,73 @@
+section#intro {
+  max-width: 1140px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+}
+
+section#intro p {
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  opacity: 0;
+  position: relative;
+  top: -50px;
+  transition: all 300ms linear;
+}
+
+section#intro.visible p {
+  opacity: 1;
+  top: 0;
+}
+
+section#intro a {
+  border: 3px solid $primary-color;
+  border-radius: 7px;
+  color: $primary-color;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 1.4rem;
+  position: relative;
+  bottom: -50px;
+  opacity: 0;
+  transition: all 300ms linear;
+}
+
+section#intro.visible a {
+  bottom: 0;
+  opacity: 1;
+}
+
+section#intro span {
+  color: $primary-color;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  margin-left: 0.5rem;
+}
+
+section#intro img {
+  max-width: 500px;
+  opacity: 0;
+  padding: 50px;
+  border-radius: 3px;
+  transition: opacity 500ms linear;
+}
+
+@media (max-width: 576px) {
+  section#intro img {
+    display: none;
+  }
+
+  .text {
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
+section#intro.visible img {
+  opacity: 1;
+}

@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #3d3e42;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.center {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: "DM_Serif_Display", serif;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+$primary-color: #ff630b;
