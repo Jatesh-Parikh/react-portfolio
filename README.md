@@ -1,4 +1,4 @@
-##Portfolio website using React and Next JS 
+## Portfolio website using React and Next JS 
 
 A special thanks to [Coding with Dawid](https://github.com/dejwid)
 
